@@ -9,7 +9,7 @@ var server = http.createServer(function(req, res) {
   var fPath = path.join(
     __dirname,
     "public",
-    req.url === "/" ? "index.html" : req.url
+    req.url === "/" ? "templates/index.html" : req.url
   );
   var extension = path.extname(fPath);
   var contentType = "text/html";
@@ -29,10 +29,21 @@ var server = http.createServer(function(req, res) {
 		fPath,
 		function(err, data) {
 			if(err) {
-				throw err;
+				if (err.code == "ENOENT") {
+					fs.readFile(
+						path.join(__dirname, 'public', "templates/404.html"),
+						function(err, page) {
+							res.writeHead(200, {'Content-type' : 'text/html'});
+							res.end(page, 'utf8');
+						})
+				} else {
+					res.writeHead(500);
+					res.end(`Something went wrong, please try again. Error code: ${err.code}`)
+				}
+			} else {
+				res.writeHead(200, {'Content-type' : contentType}),
+				res.end(data);
 			}
-			res.writeHead(200, {'Content-type' : contentType}),
-			res.end(data);
 		});
 
 });
