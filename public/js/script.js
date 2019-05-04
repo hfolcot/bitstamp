@@ -17,9 +17,8 @@ function appendToHtml(data) {
 
 //Function to make the API call
 function getData(value){
-//var corsProxy = 'https://cors-anywhere.herokuapp.com/'; //proxy to allow app to get around 'No Access-Control-Allow-Origin header' errors
-//var url = corsProxy + "https://www.bitstamp.net/api/v2/ticker/" + value;
-var url = "https://www.bitstamp.net/api/v2/ticker/" + value;
+var corsProxy = 'https://cors-anywhere.herokuapp.com/'; //proxy to allow app to get around 'No Access-Control-Allow-Origin header' errors
+var url = corsProxy + "https://www.bitstamp.net/api/v2/ticker/" + value;
 $('#choice').html(value.toUpperCase());
 $.ajax({
 	type: "GET",
