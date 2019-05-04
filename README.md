@@ -2,10 +2,18 @@
 
 A basic application returning data from the Bitstamp API.
 
+Deployed at https://bitstampexercise.herokuapp.com/
+
 This application has been written using JavaScript and JQuery, using Node.js to serve the application.
 Node script can be found in index.js in the root directory.
 The GET request is made using the JQuery.ajax method and code for this is in public/js/script.js.
 Tests have been run using Jasmine and can be found in public/scripts/spec.js. Further information on testing can be found below.
+
+A CORS proxy has been used due to the API to avoid the following error:
+```
+Access to XMLHttpRequest at has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+```
+The proxy used is [CorsAnywhere](https://cors-anywhere.herokuapp.com/). **Please note this may cause the first request made to be slightly delayed whilst the proxy app starts. Subsequent requests should be slightly faster**
 
 ## Local Deployment
 To deploy, download the repository and extract all files to directory of your choice.
