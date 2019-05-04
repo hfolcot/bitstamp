@@ -23,6 +23,9 @@ var server = http.createServer(function(req, res) {
     case ".json":
       contentType = "application/json";
       break;
+    case ".ico":
+      contentType = "image/x-icon";
+      break;
   }
 
 	fs.readFile(
