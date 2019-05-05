@@ -13,7 +13,7 @@ A CORS proxy has been used due to the API to avoid the following error:
 ```
 Access to XMLHttpRequest at has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 ```
-The proxy used is [CorsAnywhere](https://cors-anywhere.herokuapp.com/). **Please note this may cause the first request made to be slightly delayed whilst the proxy app starts. Subsequent requests should be slightly faster**
+The proxy used is [CorsAnywhere](https://cors-anywhere.herokuapp.com/) by [Rob Wu](https://github.com/Rob--W). **Please note this may cause the first request made to be slightly delayed whilst the proxy app starts. Subsequent requests should be slightly faster**
 
 ## Local Deployment
 To deploy, download the repository and extract all files to directory of your choice.
